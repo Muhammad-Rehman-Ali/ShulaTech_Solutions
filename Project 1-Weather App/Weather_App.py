@@ -6,6 +6,7 @@ import requests
 # OpenWeatherMap API key
 API_KEY = "112a21bb6f903d4ead1d19f6fd278a74"
 
+
 # Function to fetch real-time weather data
 def get_weather():
     city = city_entry.get()
@@ -31,6 +32,7 @@ def get_weather():
 
     # Fetch and display 7-day forecast using the free API
     get_forecast(city)
+
 
 # Function to fetch 7-day forecast
 def get_forecast(city):
@@ -59,6 +61,7 @@ def get_forecast(city):
         forecast_data += f"{days[i % 7]}: {temp}°C, {condition.capitalize()}\n"
 
     forecast_label.config(text=forecast_data)
+
 
 # GUI Setup
 # Initialize the main window
@@ -98,6 +101,5 @@ tk.Label(root, text="7-Day Forecast", font=("Arial", 16, "bold"), bg="#2C3E50", 
 # Forecast Data
 forecast_label = tk.Label(root, text="", font=("Arial", 12), bg="#2C3E50", fg="white", justify="left", padx=10, pady=5)
 forecast_label.pack(pady=5)
-
 
 root.mainloop()
